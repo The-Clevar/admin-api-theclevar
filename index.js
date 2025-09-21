@@ -14,7 +14,7 @@ swaggerDocs(app);
 
 // Test endpoint
 app.get("/", (req, res) => {
-  res.send("ONLY FOR TEST PURPOSE! (Stag)");
+  res.send("ONLY FOR TEST PURPOSE! (stag test)");
 });
 
 // Auth routes
