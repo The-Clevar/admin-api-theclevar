@@ -12,7 +12,7 @@ const swaggerOptions = {
     servers: [
       { url: "http://localhost:5000" },
       { url: "https://api.theclevar.com/" },
-      { url: "https://apistag.theclevar.com/" },
+      { url: "https://admin-api-theclevar-2.onrender.com/" },
     ],
     components: {
       securitySchemes: {
