@@ -14,7 +14,7 @@ swaggerDocs(app);
 
 // Test endpoint
 app.get("/", (req, res) => {
-  res.send("ONLY FOR TEST PURPOSE! (Stag)");
+  res.send("ONLY FOR TEST PURPOSE! (prod test)");
 });
 
 // Auth routes
@@ -23,6 +23,7 @@ app.use("/api/admin", adminAuthRoutes);
 app.use("/uploads", express.static("uploads"));
 app.use("/uploads", express.static(path.join(__dirname, "../../frontend/public/uploads")));
 app.use("/api/upload", uploadProductImg);
+app.use("/api/products", require("./routes/products"));
 app.listen(5000, () =>
   console.log("🚀 Server running on http://localhost:5000")
 );

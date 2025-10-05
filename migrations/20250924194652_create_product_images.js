@@ -1,3 +1,4 @@
+// migrations/202509250004_create_product_images.js
 exports.up = function (knex) {
   return knex.schema.createTable("product_images", (table) => {
     table.increments("id").primary();
@@ -6,8 +7,9 @@ exports.up = function (knex) {
     table
       .enu("category", ["UserImg", "ProductImg"])
       .notNullable()
-      .defaultTo("ProductImg"); // default if not provided
-    table.timestamps(true, true); // created_at and updated_at
+      .defaultTo("ProductImg");
+    table.integer("product_id").unsigned().references("id").inTable("products").onDelete("CASCADE");
+    table.timestamps(true, true);
   });
 };
 
